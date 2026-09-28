@@ -317,7 +317,7 @@
   <button class="bubble" id="bubble" aria-label="Get the free interview guide">
     <span class="dot" id="dot"></span>
     <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M8 7h8M8 11h6"/></svg></span>
-    <span><span id="bubbleTitle">Free: 10 Interview Tips</span><small id="bubbleSub">How I passed in 1 day</small></span>
+    <span><span id="bubbleTitle">Free: Interview Prep Guide</span><small id="bubbleSub">From a micro1 expert</small></span>
   </button>
 
   <div id="wrap">
@@ -326,17 +326,17 @@
         <div class="hero">
           <button class="close" id="close" aria-label="Close">×</button>
           <div class="art">
-            <div class="book"><b>10</b><span>TIPS TO ACE THE</span><span>micro1 AI INTERVIEW</span><i></i><i style="width:70%"></i></div>
+            <div class="book"><b>10</b><span>PREP LESSONS FOR THE</span><span>micro1 AI INTERVIEW</span><i></i><i style="width:70%"></i></div>
             <span class="badge">Wait — read this first</span>
           </div>
-          <h2 id="ph">10 Tips to Ace the micro1 AI Interview</h2>
-          <p>Before you apply: the exact prep that got me through micro1's AI interview in one day. Free.</p>
+          <h2 id="ph">Before You Face Zara: 10 Prep Lessons</h2>
+          <p>Before you apply: what I learned from failing micro1's AI interview twice, then getting selected. Free.</p>
         </div>
         <div class="body" id="pbody">
           <div class="signup">
             <ul class="list">
               <li>What to set up before you hit "Start"</li>
-              <li>How to answer so the AI interviewer scores you well</li>
+              <li>How to answer with the depth the AI interviewer looks for</li>
               <li>The mistakes that quietly sink good candidates</li>
             </ul>
             <form id="form" novalidate>
@@ -344,7 +344,7 @@
               <div><label for="e">Email</label><input id="e" type="email" autocomplete="email" placeholder="you@email.com" required></div>
               <label class="consent"><input type="checkbox" id="agree"> <span>I agree to receive the free guide and occasional emails from Dijae Dadula. My name and email are used only for this, never sold, and I can unsubscribe anytime.</span></label>
               <div class="err" id="err"></div>
-              <button class="cta" id="submit" type="submit">Send me the 10 tips →</button>
+              <button class="cta" id="submit" type="submit">Send me the guide →</button>
               <p class="disclaim">Independent guide based on personal experience. Not an official micro1 resource. Results are not guaranteed.</p>
               <div style="text-align:center"><button type="button" class="skip" id="skip">No thanks, just show me the jobs</button></div>
             </form>
@@ -457,8 +457,8 @@
     if (!$('agree').checked) { err.textContent = 'Please tick the box to agree before continuing.'; err.style.display = 'block'; return; }
     const btn = $('submit'); btn.disabled = true; btn.textContent = 'Sending…';
     try {
-      const payload = JSON.stringify({ contactName:name, contactEmail:email, channel:'email',
-          data:{ source:'micro1 jobs page', lead_magnet:'10 Tips to Ace the micro1 AI Interview', page:location.href } });
+                const payload = JSON.stringify({ contactName:name, contactEmail:email, channel:'email',
+          data:{ source:'micro1 jobs page', lead_magnet:'How I Prepared for the micro1 AI Interview', page:location.href } });
       try {
         const r = await fetch(WEBHOOK, { method:'POST', headers:{'Content-Type':'application/json'}, body: payload });
         if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -469,7 +469,7 @@
       lead = { name, email, at: Date.now() }; setLead(lead); markSigned(); uncrop();
     } catch(ex) {
       err.textContent = "Something went wrong. Please try again."; err.style.display = 'block';
-    } finally { btn.disabled = false; btn.textContent = 'Send me the 10 tips →'; }
+    } finally { btn.disabled = false; btn.textContent = 'Send me the guide →'; }
   });
 </script>
 </body>
