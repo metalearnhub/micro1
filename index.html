@@ -383,7 +383,7 @@
 <script>
   // ---- Config ----
   const WEBHOOK = "https://paymegpt.com/api/webhooks/flow/6216/0e9096eb1a7d46c0c6a6c1304905898900f0536bec78ca8c335637d03a0fbdb1";
-  const GUIDE_URL = "https://paymegpt.com/p/r3RHMpe3Fs"; // paste the PDF link here when ready; empty = show the preview mock
+  const GUIDE_URL = "https://metalearnhub.github.io/micro1/guide/";
   const KEY = "m1guide";
 
   const $ = id => document.getElementById(id);
@@ -453,10 +453,15 @@
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please enter a valid email.'; err.style.display = 'block'; return; }
     const btn = $('submit'); btn.disabled = true; btn.textContent = 'Sending…';
     try {
-      const r = await fetch(WEBHOOK, { method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ contactName:name, contactEmail:email, channel:'email',
-          data:{ source:'micro1 jobs page', lead_magnet:'10 Tips to Ace the micro1 AI Interview', page:location.href } }) });
-      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const payload = JSON.stringify({ contactName:name, contactEmail:email, channel:'email',
+          data:{ source:'micro1 jobs page', lead_magnet:'10 Tips to Ace the micro1 AI Interview', page:location.href } });
+      try {
+        const r = await fetch(WEBHOOK, { method:'POST', headers:{'Content-Type':'application/json'}, body: payload });
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+      } catch (e1) {
+        // Cross-origin fallback (e.g. when hosted on GitHub Pages)
+        await fetch(WEBHOOK, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body: payload });
+      }
       lead = { name, email, at: Date.now() }; setLead(lead); markSigned(); uncrop();
     } catch(ex) {
       err.textContent = "Something went wrong. Please try again."; err.style.display = 'block';
