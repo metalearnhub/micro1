@@ -307,6 +307,7 @@
 </script>  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="disclose">Independent micro1 referrer · Not affiliated with or endorsed by micro1</div>
   <div class="clip">
     <iframe id="frame" title="Open jobs" allow="clipboard-write"
       src="https://refer.micro1.ai/referral/jobs?referralCode=33f8a6ba-81ff-4a55-86ef-2cda37e55258&utm_source=referral&utm_medium=share&utm_campaign=job_referral"></iframe>
@@ -343,7 +344,8 @@
               <div><label for="e">Email</label><input id="e" type="email" autocomplete="email" placeholder="you@email.com" required></div>
               <div class="err" id="err"></div>
               <button class="cta" id="submit" type="submit">Send me the 10 tips →</button>
-              <p class="fine">Free. No spam. Unsubscribe anytime.</p>
+              <label class="consent"><input type="checkbox" id="agree"> <span>I agree to receive the free guide and occasional emails from Dijae Dadula. My name and email are used only for this, never sold, and I can unsubscribe anytime.</span></label>
+              <p class="disclaim">Independent guide based on personal experience. Not an official micro1 resource. Results are not guaranteed.</p>
               <div style="text-align:center"><button type="button" class="skip" id="skip">No thanks, just show me the jobs</button></div>
             </form>
           </div>
@@ -351,6 +353,7 @@
             <div class="check">✓</div>
             <h3 id="hi">You're in!</h3>
             <p>Your guide is ready. Read it, then pick a role on the board and apply.</p>
+            <p class="disclaim">Tips are based on personal experience. Interview results are not guaranteed.</p>
             <button class="cta" id="dl">Download the guide</button>
             <button type="button" class="skip" id="toJobs">Go to the jobs</button>
           </div>
@@ -394,7 +397,7 @@
 
   // ---- Crop: header hidden until the visitor engages, then full view (so micro1's close buttons show) ----
   const p = new URLSearchParams(location.search);
-  let cropped = !lead;
+  let cropped = false;
   function applyCrop(){
     const m = innerWidth < 768;
     const c = cropped ? (parseInt(m ? (p.get('mcrop') || p.get('crop') || 64) : (p.get('crop') || 64), 10) || 0) : 0;
@@ -451,6 +454,7 @@
     err.style.display = 'none';
     if (!name) { err.textContent = 'Please enter your first name.'; err.style.display = 'block'; return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please enter a valid email.'; err.style.display = 'block'; return; }
+    if (!$('agree').checked) { err.textContent = 'Please tick the box to agree before continuing.'; err.style.display = 'block'; return; }
     const btn = $('submit'); btn.disabled = true; btn.textContent = 'Sending…';
     try {
       const payload = JSON.stringify({ contactName:name, contactEmail:email, channel:'email',
