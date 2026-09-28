@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- BASE:START (managed by Coding Agent — do not edit) -->
+<base href="/micro1/guide/">
+<!-- BASE:END -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+
+<!-- SEO Meta Tags -->
+<title>10 Tips to Ace the micro1 AI Interview</title>
+<meta name="description" content="From resume to first payout: a practical guide to passing micro1" />
+<meta property="og:title" content="10 Tips to Ace the micro1 AI Interview" />
+<meta property="og:description" content="From resume to first payout: a practical guide to passing micro1" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="10 Tips to Ace the micro1 AI Interview" />
+<meta name="twitter:description" content="From resume to first payout: a practical guide to passing micro1" />
+<!-- End SEO Meta Tags -->
+<script data-lp-token-hydrate>
+(function(){try{
+  var slug="lp-mukrjulo-cktja";
+  var SITEK="";
+  var SK='lp_access_'+slug;
+  var map={access_token:'lp_pw_',allowlist_access_token:'lp_al_',pin_access_token:'lp_pin_',paywall_access_token:'lp_paid_'};
+  function siteTok(){try{return SITEK?localStorage.getItem(SITEK):null;}catch(e){return null;}}
+  var u=new URL(location.href);var found=null;var changed=false;
+  var PINP=true;
+  if(!PINP){try{localStorage.removeItem('lp_pin_'+slug);if(SITEK)localStorage.removeItem(SITEK);}catch(e){}}
+  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{if(PINP||p!=='pin_access_token'){localStorage.setItem(map[p]+slug,v);if(SITEK&&p==='pin_access_token')localStorage.setItem(SITEK,v);}}catch(e){}if(p==='pin_access_token'){try{sessionStorage.setItem('lp_fresh_'+slug,'1');}catch(e){}}u.searchParams.delete(p);changed=true;}});
+  if(found){try{sessionStorage.setItem(SK,found);}catch(e){}}
+  else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
+  if(changed){try{history.replaceState(null,'',u.toString());}catch(e){}}
+  function getTok(){try{return sessionStorage.getItem(SK)||localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();}catch(e){return null;}}
+  function needsToken(url,method){if(!url)return false;var s=String(url);var m=(method||'GET').toUpperCase();var isSheetWrite=(m==='POST'||m==='PATCH'||m==='PUT'||m==='DELETE')&&/\/sheet-rows(\/|$|\?)/.test(s);var isSheetRead=/\/sheet-data(\/|$|\?)/.test(s);var isLlm=/\/api\/landing-pages\/public\/[^/]+\/(llm|llm-config)(\/|$|\?)/.test(s);return isSheetWrite||isSheetRead||isLlm;}
+  if(window.fetch){var _f=window.fetch;window.fetch=function(input,init){try{var url=typeof input==='string'?input:(input&&input.url)||'';var method=(init&&init.method)||(input&&input.method)||'GET';if(needsToken(url,method)){var tok=getTok();if(tok){init=init||{};var h=new Headers(init.headers||(typeof input!=='string'?input.headers:undefined)||{});if(!h.has('X-Landing-Page-Token'))h.set('X-Landing-Page-Token',tok);init.headers=h;}}}catch(e){}return _f.call(this,input,init);};}
+  if(window.XMLHttpRequest){var _o=XMLHttpRequest.prototype.open;var _s=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m,u){this.__lpM=m;this.__lpU=u;return _o.apply(this,arguments);};XMLHttpRequest.prototype.send=function(){try{if(needsToken(this.__lpU,this.__lpM)){var tok=getTok();if(tok)this.setRequestHeader('X-Landing-Page-Token',tok);}}catch(e){}return _s.apply(this,arguments);};}
+}catch(e){}})();
+</script>
+
+<script data-field-replace>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var fields={};
+  var paramMap={
+    'first_name':'firstName','last_name':'lastName','full_name':'fullName',
+    'email':'email','phone':'phone','company':'company',
+    'city':'city','state':'state','country':'country'
+  };
+  var skipTags={'SCRIPT':1,'STYLE':1,'NOSCRIPT':1,'TEXTAREA':1,'CODE':1,'PRE':1};
+  var hasUrlFields=false;
+  for(var p in paramMap){
+    var v=params.get(p);
+    if(v){fields[paramMap[p]]=v;hasUrlFields=true;}
+  }
+  var contactId=params.get('contact_id');
+  function esc(s){
+    if(!s)return s;
+    var d=document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+  }
+  function doReplace(data){
+    var r={};
+    r['{{full_name}}']=esc(((data.firstName||'')+' '+(data.lastName||'')).trim()||((data.fullName||data.name)||''));
+    r['{{first_name}}']=esc(data.firstName||(data.name?data.name.split(' ')[0]:'')||'');
+    r['{{last_name}}']=esc(data.lastName||(data.name&&data.name.indexOf(' ')>-1?data.name.substring(data.name.indexOf(' ')+1):'')||'');
+    r['{{email}}']=esc(data.email||'');
+    r['{{phone}}']=esc(data.phone||'');
+    r['{{company}}']=esc(data.company||'');
+    r['{{city}}']=esc(data.city||'');
+    r['{{state}}']=esc(data.state||'');
+    r['{{country}}']=esc(data.country||'');
+    r['{{date}}']=new Date().toLocaleDateString();
+    r['{{time}}']=new Date().toLocaleTimeString();
+    r['{{location}}']=[data.city,data.state,data.country].filter(Boolean).join(', ');
+    r['{{tracking_id}}']=esc(data.trackingId||'');
+    r['{{lastClickedProduct}}']=esc(data.lastClickedProduct||'');
+    r['{{lastProductClickDate}}']=esc(data.lastProductClickDate||'');
+    r['{{lastClickedProductPrice}}']=esc(data.lastClickedProductPrice||'');
+    r['{{lastClickedProductURL}}']=esc(data.lastClickedProductURL||'');
+    r['{{productsClickedCount}}']=esc(data.productsClickedCount||'0');
+    r['{{ip_address}}']=esc(data.ipAddress||'');
+    r['{{ip}}']=esc(data.ipAddress||'');
+    if(data.customFields){
+      for(var k in data.customFields){
+        r['{{'+k+'}}']=esc(String(data.customFields[k]||''));
+      }
+    }
+    params.forEach(function(v,k){
+      if(!paramMap[k]&&k!=='contact_id'&&k!=='page_id'&&k.indexOf('utm_')!==0){
+        r['{{'+k+'}}']=esc(v);
+      }
+    });
+    var hasValues=false;
+    for(var key in r){if(r[key]){hasValues=true;break;}}
+    if(!hasValues)return;
+    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode:function(n){
+        var p=n.parentNode;
+        if(p&&skipTags[p.nodeName])return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node;
+    while(node=walker.nextNode()){
+      var txt=node.nodeValue;
+      if(txt&&txt.indexOf('{{')>-1){
+        var changed=txt;
+        for(var ph in r){
+          if(r[ph]&&changed.indexOf(ph)>-1){
+            changed=changed.split(ph).join(r[ph]);
+          }
+        }
+        if(changed!==txt)node.nodeValue=changed;
+      }
+    }
+    var attrs=['value','placeholder','content','alt','title'];
+    attrs.forEach(function(attr){
+      var els=document.querySelectorAll('['+attr+'*="{{"]');
+      for(var i=0;i<els.length;i++){
+        var tag=els[i].tagName;
+        if(skipTags[tag])continue;
+        var val=els[i].getAttribute(attr);
+        if(val){
+          var nv=val;
+          for(var ph in r){
+            if(r[ph]&&nv.indexOf(ph)>-1){
+              nv=nv.split(ph).join(r[ph]);
+            }
+          }
+          if(nv!==val)els[i].setAttribute(attr,nv);
+        }
+      }
+    });
+  }
+  function run(){
+    if(contactId){
+      var xhr=new XMLHttpRequest();
+      xhr.open('GET','https://paymegpt.com/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=7510');
+      xhr.onload=function(){
+        if(xhr.status===200){
+          try{
+            var resp=JSON.parse(xhr.responseText);
+            if(resp.success&&resp.contact){
+              var merged=resp.contact;
+              for(var k in fields){merged[k]=fields[k];}
+              doReplace(merged);
+              return;
+            }
+          }catch(e){}
+        }
+        if(hasUrlFields)doReplace(fields);
+      };
+      xhr.onerror=function(){if(hasUrlFields)doReplace(fields);};
+      xhr.send();
+    }else if(hasUrlFields){
+      doReplace(fields);
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}
+  else{run();}
+})();
+</script>
+<script data-payment>
+(function(){
+  var slug='r3RHMpe3Fs';
+  var apiBase='https://paymegpt.com';
+  var successSubtext='';var successBtnLabel='Continue';var successBtnColor='#16a34a';var successRedirect='';
+  function findEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  function findPhone(){var ids=['phone','phoneNumber','phone-number','tel','telephone','mobile','mobileNumber','cell','contact-phone','buyer-phone'];for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.trim())return el.value.trim();}var inputs=document.querySelectorAll('input[type="tel"],input[name*="phone"],input[name*="tel"],input[name*="mobile"],input[placeholder*="phone"],input[placeholder*="Phone"]');for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.trim())return inputs[j].value.trim();}return '';}
+  var __realProcessPayment=function(a,b,c,d,e){
+    var amountCents,email,productName,productDescription,customerName,quantity;
+    if(a&&typeof a==='object'){
+      amountCents=a.amountCents;email=a.email;productName=a.productName;
+      productDescription=a.productDescription||'';customerName=a.name||'';quantity=a.quantity||1;
+    }else{
+      amountCents=typeof a==='number'?a:0;productName=typeof b==='string'?b:'';
+      productDescription=typeof c==='string'?c:'';email='';customerName='';quantity=1;
+    }
+    if(!email)email=findEmail();
+    if(!customerName)customerName=findName();
+    var phone=findPhone();
+    if(!productName){alert('Product name is required.');return Promise.reject('no_product_name');}
+    if(!amountCents||amountCents<100){alert('Amount must be at least $1.00');return Promise.reject('invalid_amount');}
+    if(!email){alert('Please enter your email address.');return Promise.reject('no_email');}
+    var successBase=window.location.href.split('?')[0];
+    var __pLoc=(document.documentElement.lang||navigator.language||'en');
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/payment/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,name:customerName,phone:phone||'',amountCents:amountCents,productName:productName,productDescription:productDescription,quantity:quantity,locale:__pLoc,successUrl:successBase+'?payment=success&product='+encodeURIComponent(productName)+'&session_id={CHECKOUT_SESSION_ID}',cancelUrl:successBase+'?payment=cancelled'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process payment');throw new Error(d.error);}
+    });
+  };
+  Object.defineProperty(window,'__processPayment',{value:__realProcessPayment,writable:false,configurable:false});
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('payment')==='success'){
+      var sidP=urlParams.get('session_id');
+      if(sidP){try{fetch(apiBase+'/api/landing-pages/public/'+slug+'/checkout/confirm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sidP})}).catch(function(){});}catch(e){}}
+      var pName=urlParams.get('product')||'your item';
+      var overlay=document.createElement('div');overlay.id='payment-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      var subTxt=successSubtext||('Thank you for purchasing '+pName+'.');
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Payment Successful!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">'+esc(subTxt)+'</p><button id="lp-pay-success-btn" style="padding:12px 32px;font-size:16px;font-weight:600;background:'+successBtnColor+';color:white;border:none;border-radius:8px;cursor:pointer;">'+esc(successBtnLabel)+'</button></div>';
+      document.body.appendChild(overlay);
+      var pBtn=document.getElementById('lp-pay-success-btn');
+      if(pBtn){pBtn.addEventListener('click',function(){if(successRedirect){window.location.href=successRedirect;}else{overlay.remove();window.history.replaceState({},'',window.location.pathname);}});}
+    }
+  });
+})();
+</script>
+<script data-cart>
+(function(){
+  var slug='r3RHMpe3Fs';
+  var apiBase='https://paymegpt.com';
+  var successSubtext='';var successBtnLabel='Continue';var successBtnColor='#16a34a';var successRedirect='';
+  function findCartEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findCartName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  function findCartPhone(){var ids=['phone','phoneNumber','phone-number','tel','telephone','mobile','mobileNumber','cell','contact-phone','buyer-phone'];for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.trim())return el.value.trim();}var inputs=document.querySelectorAll('input[type="tel"],input[name*="phone"],input[name*="tel"],input[name*="mobile"],input[placeholder*="phone"],input[placeholder*="Phone"]');for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.trim())return inputs[j].value.trim();}return '';}
+  var __realCart=function(arg){
+    var items, email='', customerName='', successUrl, cancelUrl, currency;
+    if(Array.isArray(arg)){items=arg;}
+    else if(arg&&typeof arg==='object'){
+      items=arg.items;email=arg.email||'';customerName=arg.name||arg.customerName||'';
+      successUrl=arg.successUrl;cancelUrl=arg.cancelUrl;currency=arg.currency;
+    }
+    if(!Array.isArray(items)||items.length===0){alert('No items in cart.');return Promise.reject('no_items');}
+    var cleanItems=[];var totalCents=0;
+    for(var i=0;i<items.length;i++){
+      var it=items[i];if(!it||typeof it!=='object'){alert('Invalid item at position '+i);return Promise.reject('bad_item');}
+      var nm=typeof it.name==='string'?it.name.trim():'';
+      if(!nm){alert('Item '+(i+1)+' is missing a name.');return Promise.reject('no_name');}
+      var amt=typeof it.amountCents==='number'?it.amountCents:(typeof it.amount==='number'?Math.round(it.amount*100):NaN);
+      if(!isFinite(amt)||amt<1){alert('Item "'+nm+'" needs a valid amount in cents.');return Promise.reject('bad_amount');}
+      var qty=(typeof it.quantity==='number'&&it.quantity>0)?Math.floor(it.quantity):1;
+      cleanItems.push({name:nm,description:it.description||'',amountCents:amt,quantity:qty});
+      totalCents+=amt*qty;
+    }
+    if(totalCents<50){alert('Cart total must be at least $0.50');return Promise.reject('total_too_low');}
+    if(!email)email=findCartEmail();
+    if(!customerName)customerName=findCartName();
+    var cartPhone=findCartPhone();
+    if(!email){var p=window.prompt('Enter your email for the receipt:','');if(p&&p.indexOf('@')>-1){email=p.trim();}else{alert('An email address is required to complete checkout.');return Promise.reject('no_email');}}
+    var successBase=window.location.href.split('?')[0];
+    var body={email:email,name:customerName,items:cleanItems,locale:(document.documentElement.lang||navigator.language||'en')};
+    if(currency)body.currency=currency;
+    if(cartPhone)body.phone=cartPhone;
+    body.successUrl=successUrl||(successBase+'?cart=success&email='+encodeURIComponent(email)+'&session_id={CHECKOUT_SESSION_ID}');
+    body.cancelUrl=cancelUrl||(successBase+'?cart=cancelled');
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/cart/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(body)
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process checkout');throw new Error(d.error);}
+    });
+  };
+  try{Object.defineProperty(window,'__processCart',{value:__realCart,writable:false,configurable:false});}catch(e){window.__processCart=__realCart;}
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('cart')==='success'){
+      var sidC=urlParams.get('session_id');
+      if(sidC){try{fetch(apiBase+'/api/landing-pages/public/'+slug+'/checkout/confirm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sidC})}).catch(function(){});}catch(e){}}
+      if(document.getElementById('payment-success-overlay')||document.getElementById('donation-success-overlay')||document.getElementById('cart-success-overlay'))return;
+      var overlay=document.createElement('div');overlay.id='cart-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      var subTxt=successSubtext||'Thank you for your order.';
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Order Confirmed!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">'+esc(subTxt)+'</p><button id="lp-cart-success-btn" style="padding:12px 32px;font-size:16px;font-weight:600;background:'+successBtnColor+';color:white;border:none;border-radius:8px;cursor:pointer;">'+esc(successBtnLabel)+'</button></div>';
+      document.body.appendChild(overlay);
+      var cBtn=document.getElementById('lp-cart-success-btn');
+      if(cBtn){cBtn.addEventListener('click',function(){if(successRedirect){window.location.href=successRedirect;}else{overlay.remove();window.history.replaceState({},'',window.location.pathname);}});}
+    }
+  });
+})();
+</script>  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="tools"><div class="wrap">
+  <span>micro1 AI Interview Guide</span>
+  <button class="btn" onclick="window.print()">⬇ Download PDF</button>
+</div></div>
+
+<header class="cover"><div class="wrap">
+  <span class="kicker">Free guide · 2026 edition</span>
+  <h1>10 Tips to Ace the micro1 AI Interview</h1>
+  <p class="sub">From resume to first payout. What actually gets you through Zara, micro1's AI interviewer, from someone who failed twice and then passed in a day.</p>
+  <div class="by">
+    <div class="avatar">DD</div>
+    <div><b>Dijae Dadula</b><small>Certified micro1 Expert · CRM Operations Specialist</small></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>2 → 1</b><span>Failed two roles, then passed the right one</span></div>
+    <div class="stat"><b>~1 day</b><span>From interview to "selected" (my experience)</span></div>
+    <div class="stat"><b>~1 day</b><span>From my first 3 hours of work to payout (my experience)</span></div>
+  </div>
+  <a class="btn cover-cta" href="https://paymegpt.com/p/n7CFfB">Browse open micro1 roles →</a>
+</div></header>
+
+<main class="wrap">
+
+<section>
+  <span class="eyebrow">Why listen to me</span>
+  <h2>I failed twice before I passed</h2>
+  <div class="story">
+    <p>My first two micro1 applications were for two different roles, and I failed both. Looking back, the reason was simple: I didn't have deep, hands-on knowledge of those specific skills. Zara doesn't just ask what you know. It digs into <b>what you actually do, how you think, and how you handle difficult situations and everyday work</b>.</p>
+    <p>About two weeks later, micro1 came back to me through my daily routine. As part of how I find remote and freelance work, I run an automation that gives me a daily list of vetted, ready-to-apply job descriptions from sites like LinkedIn (on a free account) and other opportunity boards, and micro1 roles are always in it. When a <b>CRM</b> role came through, which is work I do every day, I didn't hesitate.</p>
+    <p>This time I prepared differently. Not by trying to trick Zara, but by honestly assessing myself: <b>what am I really capable of?</b> I reviewed my core skills and the actual results I'd delivered. So when Zara asked hard deep-dive questions, I knew exactly how to answer. A day later I was <b>selected</b>.</p>
+    <p>I'm not a perfect English speaker. What got me through was real experience, explained clearly. I then worked a first 3-hour block to see if payouts were real, and I was paid within about a day.</p>
+  </div>
+  <p style="margin-top:16px">This guide combines my own experience, micro1's official prep material and advice from its community team, and patterns reported by other candidates. Where something is community-reported rather than official, I say so.</p>
+</section>
+
+<section class="bigpic">
+  <span class="eyebrow">The big picture</span>
+  <h2>How the micro1 process works</h2>
+  <p>Know the whole path before you start. Most people only prepare for the interview and lose points everywhere else.</p>
+  <div class="flow">
+    <div class="step"><div><h4>Profile &amp; resume</h4><p>Your profile and resume are what Zara reads first, and what it will question you on. Highlight your strongest, most relevant skills.</p></div></div>
+    <div class="step"><div><h4>Apply to a role</h4><p>Pick a role that matches work you've actually done. micro1's community team recommends applying early, soon after a role is posted.</p></div></div>
+    <div class="step"><div><h4>Zara AI interview <span class="tag">on demand</span></h4><p>A live, conversational video interview you take whenever you're ready. It mixes open-ended role questions and scenario questions, plus a coding challenge (technical roles) or a human-data exercise (annotator roles). Candidates commonly report roughly 20–40 minutes; micro1 doesn't publish a fixed length.</p></div></div>
+    <div class="step"><div><h4>Instant result</h4><p>You see a real-time pass/fail result against micro1's certification criteria. If you're not certified, you can request feedback.</p></div></div>
+    <div class="step"><div><h4>Review, matching &amp; verification <span class="tag">varies</span></h4><p>Passing certifies you. Being placed on a project depends on client needs. Some candidates are matched within days; others report manager reviews taking weeks. Candidates also report an ID-verification step, so finish it the moment it's asked.</p></div></div>
+    <div class="step"><div><h4>Onboarding, first task, first payout</h4><p>Once selected, you onboard and start work. Keep your availability updated so you stay in consideration for active projects.</p></div></div>
+  </div>
+
+  <h3 style="margin-top:28px;font-size:20px">Statuses: what they usually mean</h3>
+  <table>
+    <tr><th>You see</th><th>What it usually means</th></tr>
+    <tr><td>Certified / passed</td><td>You met micro1's criteria for that skill or role. This is the gate, not a job offer yet.</td></tr>
+    <tr><td>Under (manager) review</td><td>A human or client team is reviewing your profile and interview. Candidates report anywhere from a day to about 30 days.</td></tr>
+    <tr><td>Selected</td><td>You've been picked for a project. Watch your email for onboarding steps.</td></tr>
+    <tr><td>Not selected</td><td>Reported as: you may have met the bar, but the client chose someone else. Keep applying.</td></tr>
+    <tr><td>Did not qualify</td><td>Reported as: you didn't meet the criteria for that role. Request feedback and fix the gaps.</td></tr>
+  </table>
+  <p style="font-size:13.5px;color:var(--muted);margin-top:8px">Status labels and timelines are based on community reports and can change. Always go by what your micro1 dashboard and emails say.</p>
+</section>
+
+<section class="tips">
+  <span class="eyebrow">The 10 tips</span>
+  <h2>What actually gets you through</h2>
+
+  <div class="tip">
+    <div class="head"><span class="num">1</span>
+    <h3>Apply for the role you've actually done</h3></div>
+    <p>This is the lesson that cost me two failed interviews. Zara adapts its questions to your answers and keeps going deeper, so it quickly finds where your real experience ends.</p>
+    <ul>
+      <li>Choose roles that match your day-to-day work, not roles you'd like to grow into.</li>
+      <li>Ask yourself: "Could I talk about this for 20 minutes with specific examples?" If not, pick another role.</li>
+      <li>Before you apply, do an honest self-assessment. List your core skills and the real results you've delivered for this kind of work. That list is your interview material.</li>
+      <li>Keep applying to roles that closely match your experience. It increases your visibility on the platform.</li>
+      <li>Browse all open roles in one place on <a href="https://paymegpt.com/p/n7CFfB">my micro1 jobs page</a>. It's always up to date.</li>
+    </ul>
+  </div>
+
+  <div class="tip long">
+    <div class="head"><span class="num">2</span>
+    <h3>Tailor your resume to the job description with Claude, but don't overfit</h3></div>
+    <p>Zara uses your resume to steer the interview, and candidates report it probing resume lines one by one. So your resume should put your <b>most relevant, real</b> experience front and center for <i>this</i> job description, and every line must be something you can explain in depth.</p>
+    <ul>
+      <li>Open the micro1 role you want and copy the <b>role title and full job description</b>.</li>
+      <li>Paste it, along with your current resume, into Claude using the prompt below.</li>
+      <li>Review every bullet Claude writes. If you couldn't defend it in a deep-dive, remove it.</li>
+    </ul>
+    <div class="prompt"><button class="copy" onclick="copyPrompt(this)">Copy</button><span id="prompt">You are an expert technical recruiter helping me prepare for an AI-led interview at micro1. The AI interviewer will read my resume and ask detailed deep-dive questions about it.
+
+ROLE TITLE:
+<span class="ph">[paste the micro1 role title]</span>
+
+JOB DESCRIPTION:
+<span class="ph">[paste the full job description]</span>
+
+MY CURRENT RESUME:
+<span class="ph">[paste your resume text]</span>
+
+Please do this in order:
+1. Score how well my resume matches this job description (0–100). List the top strengths and the biggest gaps.
+2. Rewrite my resume so the experience that best fits this job is at the top and easy to spot. Use the job description's wording only where it truthfully describes what I've done.
+3. Rules: do NOT invent jobs, tools, certifications or numbers. Don't keyword-stuff or overfit. Keep it natural and believable. Every bullet must be something I can explain in detail with a real example.
+4. List 8 deep-dive questions an AI interviewer would likely ask based on the rewritten resume, and for each one, the kind of specific detail I should be ready to give.</span></div>
+    <div class="callout warn"><b>Don't overfit.</b> A resume stuffed with JD keywords you can't back up is a trap. Zara will ask about them, and vague answers are exactly what fails candidates.</div>
+  </div>
+
+  <div class="tip">
+    <div class="head"><span class="num">3</span>
+    <h3>Set up your micro1 profile to win before the interview</h3></div>
+    <p>This comes straight from micro1's community team's advice to candidates:</p>
+    <ul>
+      <li>Make your profile clearly highlight your <b>strongest and most relevant skills</b> for the roles you're targeting.</li>
+      <li><b>Apply early</b>, ideally soon after a role is posted.</li>
+      <li>Customize your resume for each role you apply to (see Tip 2).</li>
+      <li>Keep your <b>availability updated</b> so you're considered for active projects.</li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <div class="head"><span class="num">4</span>
+    <h3>Study the job description like it's the exam syllabus</h3></div>
+    <p>The job description tells you what Zara will test. micro1's own advice is to go through it in detail and brush up on every listed topic.</p>
+    <ul>
+      <li>Highlight the 3–5 skills or tools the description repeats. Those are your core topics.</li>
+      <li>Learn the role's vocabulary. Candidates report struggling when unfamiliar terms came up, even with years of experience.</li>
+      <li>Read micro1's <a href="https://www.micro1.ai/interview-questions">sample interview questions</a> to see the style: technical, scenario-based and soft-skill questions.</li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <div class="head"><span class="num">5</span>
+    <h3>Take the free practice interview first</h3></div>
+    <p>micro1's <a href="https://www.micro1.ai/interview-prep">Interview Prep</a> tool runs a free, 18-minute AI mock interview for 100+ roles across 16 categories, and gives you feedback afterwards.</p>
+    <ul>
+      <li>Take the practice interview for your exact role (or the closest one).</li>
+      <li>Do it with the same setup you'll use for the real interview: same room, camera, mic and browser.</li>
+      <li>Fix what the feedback flags, then take it again if you have time.</li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <div class="head"><span class="num">6</span>
+    <h3>Prepare 3–5 real stories in STAR format</h3></div>
+    <p>micro1's community team recommends the STAR method for clear, measurable answers. MIT's career office suggests roughly this balance:</p>
+    <div class="star">
+      <div><b>S</b><span>Situation</span><em>~20% context</em></div>
+      <div><b>T</b><span>Task</span><em>~10% your goal</em></div>
+      <div><b>A</b><span>Action</span><em>~60% what <u>you</u> did</em></div>
+      <div><b>R</b><span>Result</span><em>~10% outcome, with numbers</em></div>
+    </div>
+    <ul>
+      <li>Say <b>"I"</b>, not "we". Zara is assessing <i>your</i> contribution.</li>
+      <li>Have stories ready for: a tough problem you solved, a conflict or difficult stakeholder, a mistake and what you changed, and a result you're proud of.</li>
+      <li>Prepare flexible stories, not memorized scripts. Zara's follow-ups will break a script.</li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <div class="head"><span class="num">7</span>
+    <h3>Go deep on the "how", because high-level answers fail</h3></div>
+    <p>The most common pattern in candidate feedback is answers that are <b>too high-level</b>. Zara keeps asking "how" until it hits the edge of what you know.</p>
+    <ul>
+      <li>Name the actual tools, steps, settings, checks and numbers you used.</li>
+      <li>Explain <i>why</i> you chose one approach over another (trade-offs).</li>
+      <li>Talk about what you did in real situations, not what you "would" do in theory.</li>
+      <li>For each core skill, prepare one explanation, one project example and one time it went wrong.</li>
+    </ul>
+    <div class="callout ok"><b>Example.</b> Weak: "I set up automations in the CRM." Strong: "I built a lead-routing flow: new form leads get tagged by source, assigned round-robin to three reps, and anyone untouched after 2 hours triggers a Slack alert. Response time dropped from a day to under 3 hours."</div>
+  </div>
+
+  <div class="tip">
+    <div class="head"><span class="num">8</span>
+    <h3>Talk like a pro: concise, structured, out loud</h3></div>
+    <p>micro1 says to keep responses concise and structured, which also helps you avoid timing issues.</p>
+    <ul>
+      <li>Answer the small talk naturally, then give a clear 60-second intro about yourself. Zara often builds its next questions from it.</li>
+      <li>For multi-part questions, answer each part in order. Say "First… second… third…".</li>
+      <li>Need a moment? Say "Let me think about that for a second" instead of going silent.</li>
+      <li>If a question isn't clear, ask Zara to clarify.</li>
+      <li>Stick to one language for the whole interview.</li>
+      <li>You don't need perfect English. You need clear, specific, confident answers about real work.</li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <div class="head"><span class="num">9</span>
+    <h3>Set up like it's a proctored exam</h3></div>
+    <p>The interview needs your camera, microphone and screen sharing, and it's recorded. Treat it as monitored from start to finish.</p>
+    <div class="check">
+      <div>Chrome (or Safari) on a laptop or desktop</div>
+      <div>Run the browser/system check beforehand</div>
+      <div>Camera on, face well lit, plain background</div>
+      <div>Quiet room, notifications off</div>
+      <div>Stable internet (wired or strong Wi-Fi)</div>
+      <div>One screen only, other tabs closed</div>
+      <div>Phone away, no AI helpers or extensions</div>
+      <div>Water nearby, 45+ minutes free</div>
+    </div>
+    <div class="callout warn"><b>Don't try to game it.</b> Prep guides report the platform can monitor things like tab switching and extra screens. Getting flagged can fail you even if your answers are strong.</div>
+  </div>
+
+  <div class="tip">
+    <div class="head"><span class="num">10</span>
+    <h3>After the interview: follow through</h3></div>
+    <ul>
+      <li><b>Passed?</b> Finish any ID verification and onboarding immediately. Candidates report it's a common source of delay.</li>
+      <li><b>Waiting?</b> Reviews can take from a day to several weeks. Keep your availability updated and keep applying to matching roles in the meantime.</li>
+      <li><b>Didn't pass?</b> Request feedback (micro1 offers it), fix the specific gaps, and target a role closer to your real experience. That's exactly what worked for me.</li>
+      <li><b>Selected?</b> Do excellent work on your first tasks. Quality is how you get more projects.</li>
+      <li><b>Looking for your next role?</b> New roles open often. Check <a href="https://paymegpt.com/p/n7CFfB">my micro1 jobs page</a> regularly.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Official resources</span>
+  <h2>Bookmark these</h2>
+  <div class="res">
+    <a href="https://www.micro1.ai/ai-interview-guide">micro1 AI Interview Guide<small>How the process works: Zara, question types, results and feedback</small></a>
+    <a href="https://www.micro1.ai/interview-prep">micro1 Interview Prep<small>Free 18-minute AI mock interviews for 100+ roles</small></a>
+    <a href="https://www.micro1.ai/interview-questions">micro1 Sample Interview Questions<small>What Zara asks across technical, business and soft-skill areas</small></a>
+    <a href="https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/">MIT CAPD: The STAR Method<small>How to structure behavioral answers</small></a>
+  </div>
+
+  <div class="cta">
+    <h2>Ready? Pick your role and apply</h2>
+    <p>Browse micro1's open roles through my referral page. Choose the one that matches work you've actually done, tailor your resume with the prompt in Tip 2, and go ace it.</p>
+    <a class="btn" href="https://paymegpt.com/p/n7CFfB">Browse open micro1 roles →</a>
+    <p class="url"><a href="https://paymegpt.com/p/n7CFfB">paymegpt.com/p/n7CFfB</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+  <p>© 2026 Dijae Dadula · Chatbot Authority. Independent guide based on personal experience, micro1's public resources and community reports. Not an official micro1 publication. micro1's process, statuses and timelines can change; always follow the instructions on your micro1 dashboard.</p>
+  <p>Sources: micro1.ai (AI Interview Guide, Interview Prep, Interview Questions), micro1 community-team guidance on r/micro1_ai, MIT CAPD, and candidate reports on Reddit, Trustpilot, Capterra and Glassdoor.</p>
+</div></footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
