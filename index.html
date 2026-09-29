@@ -414,14 +414,20 @@
   function closeModal(){ wrap.classList.remove('open'); $('veil').classList.add('off'); uncrop(); }
 
   // Detect the first click inside the embedded page (the iframe steals focus from this window)
-  window.addEventListener('blur', () => {
+  function onFrameFocus(){
     setTimeout(() => {
       if (document.activeElement !== frame) return;
-      if (!interrupted) { interrupted = true; openModal(); }
-      else if (cropped) uncrop();
-      frame.blur(); window.focus();
+      if (!interrupted) {
+        interrupted = true; openModal();
+        frame.blur(); window.focus();
+      } else {
+        if (cropped) uncrop();
+        // Stop watching so visitors can type in the embedded page (search box, forms)
+        window.removeEventListener('blur', onFrameFocus);
+      }
     }, 0);
-  });
+  }
+  window.addEventListener('blur', onFrameFocus);
 
   function markSigned(){
     body.classList.add('signed');
